@@ -1,0 +1,10 @@
+E:\AdventureGame\AdventureGame\AdventureGame\bin\Debug\AdventureGame.exe.config
+E:\AdventureGame\AdventureGame\AdventureGame\bin\Debug\AdventureGame.exe
+E:\AdventureGame\AdventureGame\AdventureGame\bin\Debug\AdventureGame.pdb
+E:\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.csprojResolveAssemblyReference.cache
+E:\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.AdventureGame.resources
+E:\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.Properties.Resources.resources
+E:\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.csproj.GenerateResource.Cache
+E:\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.exe
+E:\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.pdb
+E:\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.Login.resources
