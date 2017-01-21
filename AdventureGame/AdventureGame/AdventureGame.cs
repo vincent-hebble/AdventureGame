@@ -19,7 +19,8 @@ namespace AdventureGame
 
         private void AdventureGame_Load(object sender, EventArgs e)
         {
-
+            this.Show();
+            inputTextBox.Focus();
         }
 
         private void inputTextBox_KeyUp(object sender, KeyEventArgs e)
@@ -31,6 +32,16 @@ namespace AdventureGame
                 nameText.Text = Text;
                 commandTextBox.Text += (Text + '\n');
             }
+        }
+
+        private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void returnToLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

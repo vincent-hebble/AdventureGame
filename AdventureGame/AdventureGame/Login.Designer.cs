@@ -34,8 +34,9 @@
             this.passwordTextBox = new System.Windows.Forms.MaskedTextBox();
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.accountLabel = new System.Windows.Forms.LinkLabel();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +66,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Parchment", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(170, 63);
+            this.label3.Location = new System.Drawing.Point(287, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(473, 255);
             this.label3.TabIndex = 2;
@@ -76,14 +77,14 @@
             this.passwordTextBox.Location = new System.Drawing.Point(330, 521);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(411, 38);
-            this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.TabIndex = 2;
             // 
             // userNameTextBox
             // 
             this.userNameTextBox.Location = new System.Drawing.Point(330, 386);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(411, 38);
-            this.userNameTextBox.TabIndex = 4;
+            this.userNameTextBox.TabIndex = 1;
             // 
             // loginButton
             // 
@@ -92,33 +93,44 @@
             this.loginButton.Location = new System.Drawing.Point(345, 601);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(151, 84);
-            this.loginButton.TabIndex = 5;
+            this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // button2
+            // exitButton
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Font = new System.Drawing.Font("Parchment", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(535, 601);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 84);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Exit";
-            this.button2.UseVisualStyleBackColor = false;
+            this.exitButton.BackColor = System.Drawing.Color.Transparent;
+            this.exitButton.Font = new System.Drawing.Font("Parchment", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Location = new System.Drawing.Point(535, 601);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(151, 84);
+            this.exitButton.TabIndex = 4;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // accountLabel
             // 
             this.accountLabel.ActiveLinkColor = System.Drawing.Color.DimGray;
             this.accountLabel.AutoSize = true;
             this.accountLabel.BackColor = System.Drawing.Color.Transparent;
+            this.accountLabel.Font = new System.Drawing.Font("Old English Text MT", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountLabel.Location = new System.Drawing.Point(391, 729);
             this.accountLabel.Name = "accountLabel";
-            this.accountLabel.Size = new System.Drawing.Size(252, 32);
-            this.accountLabel.TabIndex = 7;
+            this.accountLabel.Size = new System.Drawing.Size(224, 33);
+            this.accountLabel.TabIndex = 5;
             this.accountLabel.TabStop = true;
             this.accountLabel.Text = "Create An Account";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(983, 840);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 32);
+            this.label4.TabIndex = 8;
             // 
             // Login
             // 
@@ -128,9 +140,10 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::AdventureGame.Properties.Resources.backgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(851, 792);
+            this.ClientSize = new System.Drawing.Size(1016, 881);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.accountLabel);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.userNameTextBox);
             this.Controls.Add(this.passwordTextBox);
@@ -153,7 +166,8 @@
         private System.Windows.Forms.MaskedTextBox passwordTextBox;
         private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.LinkLabel accountLabel;
+        private System.Windows.Forms.Label label4;
     }
 }

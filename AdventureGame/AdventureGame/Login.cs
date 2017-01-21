@@ -12,21 +12,28 @@ namespace AdventureGame
 {
     public partial class Login : Form
     {
+
         public Login()
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
             AdventureGame game = new AdventureGame();
             game.Show();
+            game.FormClosed += new FormClosedEventHandler(game_FormClosed);
             this.Hide();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        void game_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
     }
 }

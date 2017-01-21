@@ -89,6 +89,10 @@
             this.ConstitutionLabel = new System.Windows.Forms.Label();
             this.manaLabel = new System.Windows.Forms.Label();
             this.hpLabel = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topLeftPanel.SuspendLayout();
             this.equipmentGroupBox.SuspendLayout();
             this.bottomLeftPanel.SuspendLayout();
@@ -102,6 +106,7 @@
             this.storyPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.topBlackPanel.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // topLeftPanel
@@ -109,7 +114,7 @@
             this.topLeftPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.topLeftPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.topLeftPanel.Controls.Add(this.equipmentGroupBox);
-            this.topLeftPanel.Location = new System.Drawing.Point(-1, 1);
+            this.topLeftPanel.Location = new System.Drawing.Point(0, 52);
             this.topLeftPanel.Name = "topLeftPanel";
             this.topLeftPanel.Size = new System.Drawing.Size(555, 545);
             this.topLeftPanel.TabIndex = 1;
@@ -269,7 +274,7 @@
             this.bottomLeftPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bottomLeftPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.bottomLeftPanel.Controls.Add(this.abilityGroupBox);
-            this.bottomLeftPanel.Location = new System.Drawing.Point(5, 552);
+            this.bottomLeftPanel.Location = new System.Drawing.Point(6, 603);
             this.bottomLeftPanel.Name = "bottomLeftPanel";
             this.bottomLeftPanel.Size = new System.Drawing.Size(549, 658);
             this.bottomLeftPanel.TabIndex = 2;
@@ -289,12 +294,13 @@
             // 
             this.abilityTextBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.abilityTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.abilityTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.abilityTextBox.ForeColor = System.Drawing.SystemColors.Control;
             this.abilityTextBox.Location = new System.Drawing.Point(16, 37);
             this.abilityTextBox.Name = "abilityTextBox";
             this.abilityTextBox.ReadOnly = true;
             this.abilityTextBox.Size = new System.Drawing.Size(467, 573);
-            this.abilityTextBox.TabIndex = 1;
+            this.abilityTextBox.TabIndex = 2;
             this.abilityTextBox.Text = "";
             // 
             // inventoryPanel
@@ -302,7 +308,7 @@
             this.inventoryPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.inventoryPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.inventoryPanel.Controls.Add(this.inventoryGroupBox);
-            this.inventoryPanel.Location = new System.Drawing.Point(1949, 395);
+            this.inventoryPanel.Location = new System.Drawing.Point(1950, 446);
             this.inventoryPanel.Name = "inventoryPanel";
             this.inventoryPanel.Size = new System.Drawing.Size(432, 815);
             this.inventoryPanel.TabIndex = 4;
@@ -322,12 +328,13 @@
             // 
             this.inventoryTextBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.inventoryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inventoryTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.inventoryTextBox.ForeColor = System.Drawing.SystemColors.Control;
             this.inventoryTextBox.Location = new System.Drawing.Point(16, 54);
             this.inventoryTextBox.Name = "inventoryTextBox";
             this.inventoryTextBox.ReadOnly = true;
             this.inventoryTextBox.Size = new System.Drawing.Size(350, 690);
-            this.inventoryTextBox.TabIndex = 0;
+            this.inventoryTextBox.TabIndex = 1;
             this.inventoryTextBox.Text = "";
             // 
             // characterPanel
@@ -335,7 +342,7 @@
             this.characterPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.characterPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.characterPanel.Controls.Add(this.characterGroupBox);
-            this.characterPanel.Location = new System.Drawing.Point(1949, 4);
+            this.characterPanel.Location = new System.Drawing.Point(1950, 55);
             this.characterPanel.Name = "characterPanel";
             this.characterPanel.Size = new System.Drawing.Size(432, 385);
             this.characterPanel.TabIndex = 5;
@@ -353,9 +360,9 @@
             this.characterGroupBox.Controls.Add(this.raceText);
             this.characterGroupBox.Controls.Add(this.experienceLabel);
             this.characterGroupBox.ForeColor = System.Drawing.SystemColors.Control;
-            this.characterGroupBox.Location = new System.Drawing.Point(19, 21);
+            this.characterGroupBox.Location = new System.Drawing.Point(19, 6);
             this.characterGroupBox.Name = "characterGroupBox";
-            this.characterGroupBox.Size = new System.Drawing.Size(388, 346);
+            this.characterGroupBox.Size = new System.Drawing.Size(388, 361);
             this.characterGroupBox.TabIndex = 0;
             this.characterGroupBox.TabStop = false;
             this.characterGroupBox.Text = "Character";
@@ -456,7 +463,7 @@
             this.mainPanel.Controls.Add(this.inputTextBox);
             this.mainPanel.Controls.Add(this.commandPanel);
             this.mainPanel.Controls.Add(this.storyPanel);
-            this.mainPanel.Location = new System.Drawing.Point(560, 83);
+            this.mainPanel.Location = new System.Drawing.Point(561, 134);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1383, 1127);
             this.mainPanel.TabIndex = 6;
@@ -466,7 +473,7 @@
             this.inputTextBox.Location = new System.Drawing.Point(12, 1070);
             this.inputTextBox.Name = "inputTextBox";
             this.inputTextBox.Size = new System.Drawing.Size(1351, 38);
-            this.inputTextBox.TabIndex = 2;
+            this.inputTextBox.TabIndex = 0;
             this.inputTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.inputTextBox_KeyUp);
             // 
             // commandPanel
@@ -494,6 +501,7 @@
             // 
             this.commandTextBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.commandTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.commandTextBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.commandTextBox.ForeColor = System.Drawing.SystemColors.Control;
             this.commandTextBox.Location = new System.Drawing.Point(42, 79);
             this.commandTextBox.Name = "commandTextBox";
@@ -517,19 +525,20 @@
             // 
             this.storyTextBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.storyTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.storyTextBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.storyTextBox.ForeColor = System.Drawing.SystemColors.Control;
             this.storyTextBox.Location = new System.Drawing.Point(42, 45);
             this.storyTextBox.Name = "storyTextBox";
             this.storyTextBox.ReadOnly = true;
             this.storyTextBox.Size = new System.Drawing.Size(1266, 653);
-            this.storyTextBox.TabIndex = 2;
+            this.storyTextBox.TabIndex = 4;
             this.storyTextBox.Text = "";
             // 
             // topPanel
             // 
             this.topPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.topPanel.Controls.Add(this.topBlackPanel);
-            this.topPanel.Location = new System.Drawing.Point(560, 1);
+            this.topPanel.Location = new System.Drawing.Point(561, 52);
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(1381, 76);
             this.topPanel.TabIndex = 7;
@@ -740,19 +749,55 @@
             this.hpLabel.TabIndex = 0;
             this.hpLabel.Text = "HP:";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(2388, 52);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.returnToLoginToolStripMenuItem,
+            this.exitGameToolStripMenuItem});
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(76, 48);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // returnToLoginToolStripMenuItem
+            // 
+            this.returnToLoginToolStripMenuItem.Name = "returnToLoginToolStripMenuItem";
+            this.returnToLoginToolStripMenuItem.Size = new System.Drawing.Size(338, 46);
+            this.returnToLoginToolStripMenuItem.Text = "Return to Login";
+            this.returnToLoginToolStripMenuItem.Click += new System.EventHandler(this.returnToLoginToolStripMenuItem_Click);
+            // 
+            // exitGameToolStripMenuItem
+            // 
+            this.exitGameToolStripMenuItem.Name = "exitGameToolStripMenuItem";
+            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(338, 46);
+            this.exitGameToolStripMenuItem.Text = "Exit Game";
+            this.exitGameToolStripMenuItem.Click += new System.EventHandler(this.exitGameToolStripMenuItem_Click);
+            // 
             // AdventureGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(2390, 1242);
+            this.ClientSize = new System.Drawing.Size(2388, 1271);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.characterPanel);
             this.Controls.Add(this.inventoryPanel);
             this.Controls.Add(this.bottomLeftPanel);
             this.Controls.Add(this.topLeftPanel);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdventureGame";
             this.Text = "Kelsitopia";
             this.Load += new System.EventHandler(this.AdventureGame_Load);
@@ -774,7 +819,10 @@
             this.topPanel.ResumeLayout(false);
             this.topBlackPanel.ResumeLayout(false);
             this.topBlackPanel.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -840,6 +888,10 @@
         private System.Windows.Forms.Label previousLabel;
         private System.Windows.Forms.RichTextBox commandTextBox;
         private System.Windows.Forms.RichTextBox storyTextBox;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem returnToLoginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitGameToolStripMenuItem;
     }
 }
 
