@@ -21,5 +21,12 @@ namespace AdventureGame
         {
 
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            AdventureGame game = new AdventureGame();
+            game.Show();
+            this.Hide();
+        }
     }
 }
