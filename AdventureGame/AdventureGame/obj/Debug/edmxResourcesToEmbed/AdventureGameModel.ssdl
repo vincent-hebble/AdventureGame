@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdventureDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="characterTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Race" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Class" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="Experience" Type="int" Nullable="false" />
+    <Property Name="Strength" Type="int" Nullable="false" />
+    <Property Name="Constitution" Type="int" Nullable="false" />
+    <Property Name="Dexterity" Type="int" Nullable="false" />
+    <Property Name="Charisma" Type="int" Nullable="false" />
+    <Property Name="Wisdom" Type="int" Nullable="false" />
+    <Property Name="Intelligence" Type="int" Nullable="false" />
+    <Property Name="MaxHP" Type="int" Nullable="false" />
+    <Property Name="MaxMana" Type="int" Nullable="false" />
+    <Property Name="MaxStamina" Type="int" Nullable="false" />
+    <Property Name="userID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="idTable">
+    <Key>
+      <PropertyRef Name="objectID" />
+    </Key>
+    <Property Name="objectID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="int" />
+  </EntityType>
+  <EntityType Name="userTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__character__userI__1273C1CD">
+    <End Role="userTable" Type="Self.userTable" Multiplicity="1" />
+    <End Role="characterTable" Type="Self.characterTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userTable">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="characterTable">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AdventureDatabaseModelStoreContainer">
+    <EntitySet Name="characterTable" EntityType="Self.characterTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="idTable" EntityType="Self.idTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userTable" EntityType="Self.userTable" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__character__userI__1273C1CD" Association="Self.FK__character__userI__1273C1CD">
+      <End Role="userTable" EntitySet="userTable" />
+      <End Role="characterTable" EntitySet="characterTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

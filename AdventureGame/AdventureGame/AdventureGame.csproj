@@ -48,8 +48,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,17 +72,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdventureGame.cs">
+    <Compile Include="Adventure.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdventureGame.Designer.cs">
-      <DependentUpon>AdventureGame.cs</DependentUpon>
+    <Compile Include="Adventure.Designer.cs">
+      <DependentUpon>Adventure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureGameModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureGameModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureGameModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureGameModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureGameModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="characterTable.cs">
+      <DependentUpon>AdventureGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateAccount.Designer.cs">
       <DependentUpon>CreateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="idTable.cs">
+      <DependentUpon>AdventureGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -81,8 +113,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AdventureGame.resx">
-      <DependentUpon>AdventureGame.cs</DependentUpon>
+    <Compile Include="userTable.cs">
+      <DependentUpon>AdventureGameModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Adventure.resx">
+      <DependentUpon>Adventure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateAccount.resx">
       <DependentUpon>CreateAccount.cs</DependentUpon>
@@ -100,6 +135,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="AdventureGameModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdventureGameModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AdventureGameModel.edmx.diagram">
+      <DependentUpon>AdventureGameModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\characterTable.datasource" />
+    <None Include="Properties\DataSources\idTable.datasource" />
+    <None Include="Properties\DataSources\userTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,7 +157,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -130,12 +178,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdventureDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AdventureDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>AdventureDatabase.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="AdventureGameModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdventureGameModel.edmx</DependentUpon>
+      <LastGenOutput>AdventureGameModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AdventureGameModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdventureGameModel.edmx</DependentUpon>
+      <LastGenOutput>AdventureGameModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

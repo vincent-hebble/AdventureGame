@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
@@ -37,6 +38,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.password1TextBox = new System.Windows.Forms.MaskedTextBox();
             this.password2TextBox = new System.Windows.Forms.MaskedTextBox();
+            this.userTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,6 +77,7 @@
             // 
             // usernameTextBox
             // 
+            this.usernameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userTableBindingSource, "username", true));
             this.usernameTextBox.Location = new System.Drawing.Point(335, 204);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(375, 38);
@@ -112,11 +116,12 @@
             // 
             // password1TextBox
             // 
+            this.password1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userTableBindingSource, "password", true));
             this.password1TextBox.Location = new System.Drawing.Point(335, 282);
             this.password1TextBox.Name = "password1TextBox";
             this.password1TextBox.PasswordChar = '*';
             this.password1TextBox.Size = new System.Drawing.Size(375, 38);
-            this.password1TextBox.TabIndex = 8;
+            this.password1TextBox.TabIndex = 1;
             // 
             // password2TextBox
             // 
@@ -124,7 +129,11 @@
             this.password2TextBox.Name = "password2TextBox";
             this.password2TextBox.PasswordChar = '*';
             this.password2TextBox.Size = new System.Drawing.Size(375, 38);
-            this.password2TextBox.TabIndex = 9;
+            this.password2TextBox.TabIndex = 2;
+            // 
+            // userTableBindingSource
+            // 
+            this.userTableBindingSource.DataSource = typeof(AdventureGame.userTable);
             // 
             // CreateAccount
             // 
@@ -132,7 +141,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AdventureGame.Properties.Resources.backgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(805, 744);
+            this.ClientSize = new System.Drawing.Size(805, 752);
             this.Controls.Add(this.password2TextBox);
             this.Controls.Add(this.password1TextBox);
             this.Controls.Add(this.label2);
@@ -143,7 +152,9 @@
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.label1);
             this.Name = "CreateAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create An Account";
+            ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +171,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox password1TextBox;
         private System.Windows.Forms.MaskedTextBox password2TextBox;
+        private System.Windows.Forms.BindingSource userTableBindingSource;
     }
 }

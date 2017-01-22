@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdventureDatabaseModelStoreContainer" CdmEntityContainer="AdventureDatabaseEntities">
+    <EntitySetMapping Name="characterTables">
+      <EntityTypeMapping TypeName="AdventureDatabaseModel.characterTable">
+        <MappingFragment StoreEntitySet="characterTable">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Race" ColumnName="Race" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Constitution" ColumnName="Constitution" />
+          <ScalarProperty Name="Dexterity" ColumnName="Dexterity" />
+          <ScalarProperty Name="Charisma" ColumnName="Charisma" />
+          <ScalarProperty Name="Wisdom" ColumnName="Wisdom" />
+          <ScalarProperty Name="Intelligence" ColumnName="Intelligence" />
+          <ScalarProperty Name="MaxHP" ColumnName="MaxHP" />
+          <ScalarProperty Name="MaxMana" ColumnName="MaxMana" />
+          <ScalarProperty Name="MaxStamina" ColumnName="MaxStamina" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userTables">
+      <EntityTypeMapping TypeName="AdventureDatabaseModel.userTable">
+        <MappingFragment StoreEntitySet="userTable">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="idTables">
+      <EntityTypeMapping TypeName="AdventureDatabaseModel.idTable">
+        <MappingFragment StoreEntitySet="idTable">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="objectID" ColumnName="objectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
