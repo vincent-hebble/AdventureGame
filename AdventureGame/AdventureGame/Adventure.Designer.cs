@@ -370,9 +370,9 @@
             // experienceText
             // 
             this.experienceText.ForeColor = System.Drawing.SystemColors.Control;
-            this.experienceText.Location = new System.Drawing.Point(135, 290);
+            this.experienceText.Location = new System.Drawing.Point(110, 290);
             this.experienceText.Name = "experienceText";
-            this.experienceText.Size = new System.Drawing.Size(350, 32);
+            this.experienceText.Size = new System.Drawing.Size(375, 32);
             this.experienceText.TabIndex = 10;
             // 
             // nameLabel
@@ -398,17 +398,17 @@
             // levelText
             // 
             this.levelText.ForeColor = System.Drawing.SystemColors.Control;
-            this.levelText.Location = new System.Drawing.Point(135, 229);
+            this.levelText.Location = new System.Drawing.Point(110, 229);
             this.levelText.Name = "levelText";
-            this.levelText.Size = new System.Drawing.Size(350, 32);
+            this.levelText.Size = new System.Drawing.Size(375, 32);
             this.levelText.TabIndex = 9;
             // 
             // nameText
             // 
             this.nameText.ForeColor = System.Drawing.SystemColors.Control;
-            this.nameText.Location = new System.Drawing.Point(135, 46);
+            this.nameText.Location = new System.Drawing.Point(110, 46);
             this.nameText.Name = "nameText";
-            this.nameText.Size = new System.Drawing.Size(350, 32);
+            this.nameText.Size = new System.Drawing.Size(375, 32);
             this.nameText.TabIndex = 6;
             // 
             // levelLabel
@@ -434,17 +434,17 @@
             // classText
             // 
             this.classText.ForeColor = System.Drawing.SystemColors.Control;
-            this.classText.Location = new System.Drawing.Point(135, 168);
+            this.classText.Location = new System.Drawing.Point(110, 168);
             this.classText.Name = "classText";
-            this.classText.Size = new System.Drawing.Size(350, 32);
+            this.classText.Size = new System.Drawing.Size(375, 32);
             this.classText.TabIndex = 8;
             // 
             // raceText
             // 
             this.raceText.ForeColor = System.Drawing.SystemColors.Control;
-            this.raceText.Location = new System.Drawing.Point(135, 107);
+            this.raceText.Location = new System.Drawing.Point(110, 107);
             this.raceText.Name = "raceText";
-            this.raceText.Size = new System.Drawing.Size(350, 32);
+            this.raceText.Size = new System.Drawing.Size(375, 32);
             this.raceText.TabIndex = 7;
             // 
             // experienceLabel
