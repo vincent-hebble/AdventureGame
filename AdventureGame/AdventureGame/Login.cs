@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
 
 namespace AdventureGame
 {
@@ -18,12 +20,68 @@ namespace AdventureGame
             InitializeComponent();
         }
 
+        private void getUser(string userName, string userPassword)
+        {
+           AdventureDatabaseEntities dbcontext = new AdventureDatabaseEntities();
+
+            var idQuery = (from user in dbcontext.userTables
+                             where user.username == userName &&
+                                   user.password == userPassword
+                             select user).SingleOrDefault();
+
+            var objectQuery = (from obj in dbcontext.idTables
+                               where obj.objectID == "userID"
+                               select obj).SingleOrDefault();
+
+            objectQuery.ID = idQuery.ID;
+
+            dbcontext.SaveChanges();
+
+            dbcontext.Dispose();
+        }
+
+        private bool isUserValid(string userName, string userPassword)
+        {
+              AdventureDatabaseEntities dbcontext = new AdventureDatabaseEntities();
+
+               var loginQuery = from valid in dbcontext.userTables
+                                 where valid.username == userName &&
+                                       valid.password == userPassword
+                                 select valid;
+
+            if (loginQuery.Any())
+            {
+                dbcontext.Dispose();
+                getUser(userName, userPassword);
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         private void loginButton_Click(object sender, EventArgs e)
         {
-            AdventureGame game = new AdventureGame();
-            game.Show();
-            game.FormClosed += new FormClosedEventHandler(game_FormClosed);
-            this.Hide();
+            if (isUserValid(userNameTextBox.Text, passwordTextBox.Text))
+            {
+                Adventure game = new Adventure();
+                game.Show();
+                game.FormClosed += new FormClosedEventHandler(game_FormClosed);
+                this.Hide();
+
+                userNameTextBox.Text = "";
+                passwordTextBox.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Incorrect User Name or Password","Login Unsuccesful",MessageBoxButtons.OK);
+
+                userNameTextBox.Text = "";
+                passwordTextBox.Text = "";
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)

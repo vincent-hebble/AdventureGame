@@ -14,10 +14,14 @@ C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\obj\D
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\bin\Debug\AdventureGame.exe
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\bin\Debug\AdventureGame.pdb
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.csprojResolveAssemblyReference.cache
-C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.AdventureGame.resources
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.CreateAccount.resources
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.Login.resources
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.Properties.Resources.resources
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.csproj.GenerateResource.Cache
+C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\bin\Debug\EntityFramework.dll
+C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\bin\Debug\EntityFramework.xml
+C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.Adventure.resources
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\bin\Debug\AdventureDatabase.mdf
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\bin\Debug\AdventureDatabase_log.ldf
