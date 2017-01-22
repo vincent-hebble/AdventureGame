@@ -122,6 +122,7 @@
             this.accountLabel.TabIndex = 5;
             this.accountLabel.TabStop = true;
             this.accountLabel.Text = "Create An Account";
+            this.accountLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.accountLabel_LinkClicked);
             // 
             // label4
             // 

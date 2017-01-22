@@ -31,7 +31,20 @@ namespace AdventureGame
             this.Close();
         }
 
+        private void accountLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CreateAccount account = new CreateAccount();
+            account.Show();
+            account.FormClosed += new FormClosedEventHandler(account_FormClosed);
+            this.Hide();
+        }
+
         void game_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
+
+        void account_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
         }
