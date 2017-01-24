@@ -11,7 +11,7 @@ namespace AdventureGame
 {
     class DatabaseCalls
     {
-        private int ID;
+        private int USERID, CHARACTERID;
 
         public bool isUserValid(string userName, string userPassword)
         {
@@ -100,7 +100,7 @@ namespace AdventureGame
             var idQuery = (from id in dbcontext.idTables
                            where id.objectID == "userID"
                            select id.ID).Single();
-            ID = idQuery.Value;
+            USERID = idQuery.Value;
             dbcontext.Dispose();
         }
 
@@ -110,7 +110,7 @@ namespace AdventureGame
             AdventureDatabaseEntities dbcontext = new AdventureDatabaseEntities();
 
             var characterQuery = from character in dbcontext.characterTables
-                                 where character.userID == ID
+                                 where character.userID == USERID
                                  select character;
 
             if(characterQuery.Any())
@@ -183,7 +183,7 @@ namespace AdventureGame
                 MaxHP = maxHP,
                 MaxMana = maxMana,
                 MaxStamina = maxStamina,
-                userID = ID
+                userID = USERID
             };
 
             dbcontext.characterTables.Add(data);
@@ -198,7 +198,7 @@ namespace AdventureGame
             getUserID();
 
             var query = (from row in dbcontext.characterTables
-                         where row.userID == ID
+                         where row.userID == USERID
                          select row).FirstOrDefault();
 
             if (query != null)
@@ -218,7 +218,7 @@ namespace AdventureGame
             getUserID();
 
             var characterQuery = ( from row in dbcontext.characterTables
-                                   where row.userID == ID
+                                   where row.userID == USERID
                                    select row).FirstOrDefault();
 
             characterName = characterQuery.Name;
@@ -246,7 +246,7 @@ namespace AdventureGame
             AdventureDatabaseEntities dbcontext = new AdventureDatabaseEntities();
 
             var idQuery = (from character in dbcontext.characterTables
-                           where character.userID == ID
+                           where character.userID == USERID
                            select character).SingleOrDefault();
 
             var objectQuery = (from obj in dbcontext.idTables

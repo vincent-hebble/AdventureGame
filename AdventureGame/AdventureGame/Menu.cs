@@ -72,7 +72,7 @@ namespace AdventureGame
                 }
                 else if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Continue Adventuring and May Glory come to thee name", "Glad to see you stay", MessageBoxButtons.OK);
+                    MessageBox.Show("Continue Adventuring and May Glory come to thy name", "Glad to see you stay", MessageBoxButtons.OK);
                 }
             }
             else

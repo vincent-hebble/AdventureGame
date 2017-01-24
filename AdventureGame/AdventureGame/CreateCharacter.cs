@@ -14,11 +14,53 @@ namespace AdventureGame
     {
         DatabaseCalls data = new DatabaseCalls();
 
+        int[] raceStatModifier = new int[6];
+        int[] classStatModifier = new int[6];
+        
+
         private int[] standardArray = new int[6];
 
         public CreateCharacter()
         {
             InitializeComponent();
+        }
+
+        private void refreshStatBonus()
+        {
+            strengthLabel.Text = ("+" + (raceStatModifier[0] + classStatModifier[0]));
+            constitutionLabel.Text = ("+" + (raceStatModifier[1] + classStatModifier[1]));
+            dexterityLabel.Text = ("+" + (raceStatModifier[2] + classStatModifier[2]));
+            charismaLabel.Text = ("+" + (raceStatModifier[3] + classStatModifier[3]));
+            wisdomLabel.Text = ("+" + (raceStatModifier[4] + classStatModifier[4]));
+            intelligenceLabel.Text = ("+" + (raceStatModifier[5] + classStatModifier[5]));
+
+            for (int i = 0; i < 6; ++i)
+            {
+                if (raceStatModifier[i] + classStatModifier[i] > 0)
+                {
+                    switch(i)
+                    {
+                        case 0: strengthLabel.Visible = true; break;
+                        case 1: constitutionLabel.Visible = true; break;
+                        case 2: dexterityLabel.Visible = true; break;
+                        case 3: charismaLabel.Visible = true; break;
+                        case 4: wisdomLabel.Visible = true; break;
+                        case 5: intelligenceLabel.Visible = true; break;
+                    }
+                }
+                else
+                {
+                    switch (i)
+                    {
+                        case 0: strengthLabel.Visible = false; break;
+                        case 1: constitutionLabel.Visible = false; break;
+                        case 2: dexterityLabel.Visible = false; break;
+                        case 3: charismaLabel.Visible = false; break;
+                        case 4: wisdomLabel.Visible = false; break;
+                        case 5: intelligenceLabel.Visible = false; break;
+                    }
+                }
+            }
         }
 
         private void reset()
@@ -105,7 +147,7 @@ namespace AdventureGame
                     catch(Exception ex)
                     {
                         MessageBox.Show("Something happened!!! oops!\n\n" + ex.Message + "",
-                            "Character creation unsuccesful", MessageBoxButtons.OK);
+                            "Character creation unsuccessful", MessageBoxButtons.OK);
                     }
                 }
                 else
@@ -124,28 +166,57 @@ namespace AdventureGame
             reset();
         }
 
+        //Strength = 0, Constitution = 1, Dexterity = 2, 
+        //Charisma = 3, Wisdom = 4, Intelligence = 5
+
         private void raceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selection = raceComboBox.Text;
 
             if(selection == "Human")
             {
-                charismaLabel.Text = "+2";
-                strengthLabel.Text = "";
-                wisdomLabel.Text = "";
+                for(int i = 0; i < 6; ++i)
+                {
+                    if(i == 3)
+                    {
+                        raceStatModifier[i] = 2;
+                    }
+                    else
+                    {
+                        raceStatModifier[i] = 0;
+                    }
+                }
             }
             else if (selection == "Elf")
             {
-                charismaLabel.Text = "";
-                strengthLabel.Text = "";
-                wisdomLabel.Text = "+2";
+                for (int i = 0; i < 6; ++i)
+                {
+                    if (i == 4)
+                    {
+                        raceStatModifier[i] = 2;
+                    }
+                    else
+                    {
+                        raceStatModifier[i] = 0;
+                    }
+                }
             }
             else if (selection == "Orc")
             {
-                charismaLabel.Text = "";
-                strengthLabel.Text = "+2";
-                wisdomLabel.Text = "";
+                for (int i = 0; i < 6; ++i)
+                {
+                    if (i == 0)
+                    {
+                        raceStatModifier[i] = 2;
+                    }
+                    else
+                    {
+                        raceStatModifier[i] = 0;
+                    }
+                }
             }
+
+            refreshStatBonus();
         }
 
         private void classComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -154,22 +225,48 @@ namespace AdventureGame
 
             if (selection == "Warrior")
             {
-                constitutionLabel.Text = "+2";
-                intelligenceLabel.Text = "";
-                dexterityLabel.Text = "";
+                for (int i = 0; i < 6; ++i)
+                {
+                    if (i == 1)
+                    {
+                        classStatModifier[i] = 2;
+                    }
+                    else
+                    {
+                        classStatModifier[i] = 0;
+                    }
+                }
             }
             else if (selection == "Sorcerer")
             {
-                constitutionLabel.Text = "";
-                intelligenceLabel.Text = "+2";
-                dexterityLabel.Text = "";
+                for (int i = 0; i < 6; ++i)
+                {
+                    if (i == 5)
+                    {
+                        classStatModifier[i] = 2;
+                    }
+                    else
+                    {
+                        classStatModifier[i] = 0;
+                    }
+                }
             }
             else if (selection == "Ranger")
             {
-                constitutionLabel.Text = "";
-                intelligenceLabel.Text = "";
-                dexterityLabel.Text = "+2";
+                for (int i = 0; i < 6; ++i)
+                {
+                    if (i == 2)
+                    {
+                        classStatModifier[i] = 2;
+                    }
+                    else
+                    {
+                        classStatModifier[i] = 0;
+                    }
+                }
             }
+
+            refreshStatBonus();
         }
     }
 }

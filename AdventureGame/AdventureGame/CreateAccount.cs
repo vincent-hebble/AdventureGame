@@ -32,19 +32,19 @@ namespace AdventureGame
                         try
                         {
                             data.createUser(usernameTextBox.Text, password1TextBox.Text);
-                            MessageBox.Show("Congratulations!!!", "Account Creation Succesful", MessageBoxButtons.OK);
+                            MessageBox.Show("Congratulations!!!", "Account Creation Successful", MessageBoxButtons.OK);
                             this.Close();
                         }
                         catch
                         {
-                            MessageBox.Show("Something Happened", "Account Creation Unsuccesful", MessageBoxButtons.OK);
+                            MessageBox.Show("Something Happened", "Account Creation Unsuccessful", MessageBoxButtons.OK);
                             password1TextBox.Text = "";
                             password2TextBox.Text = "";
                         }
                     }
                     else
                     {
-                        MessageBox.Show("User Name already exists", "Account Creation Unsuccesful", MessageBoxButtons.OK);
+                        MessageBox.Show("User Name already exists", "Account Creation Unsuccessful", MessageBoxButtons.OK);
                         usernameTextBox.Text = "";
                         password1TextBox.Text = "";
                         password2TextBox.Text = "";
@@ -52,14 +52,14 @@ namespace AdventureGame
                 }
                 else
                 {
-                    MessageBox.Show("Passwords did not match", "Account Creation Unsuccesful", MessageBoxButtons.OK);
+                    MessageBox.Show("Passwords did not match", "Account Creation Unsuccessful", MessageBoxButtons.OK);
                     password1TextBox.Text = "";
                     password2TextBox.Text = "";
                 }
             }
             else
             {
-                MessageBox.Show("Fields cannot be empty", "Account Creation Unsuccesful", MessageBoxButtons.OK);
+                MessageBox.Show("Fields cannot be empty", "Account Creation Unsuccessful", MessageBoxButtons.OK);
                 usernameTextBox.Text = "";
                 password1TextBox.Text = "";
                 password2TextBox.Text = "";

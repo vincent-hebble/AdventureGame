@@ -35,7 +35,7 @@ namespace AdventureGame
             }
             else
             {
-                MessageBox.Show("Incorrect User Name or Password","Login Unsuccesful",MessageBoxButtons.OK);
+                MessageBox.Show("Incorrect User Name or Password","Login Unsuccessful",MessageBoxButtons.OK);
 
                 userNameTextBox.Text = "";
                 passwordTextBox.Text = "";
