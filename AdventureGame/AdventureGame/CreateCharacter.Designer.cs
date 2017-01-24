@@ -219,7 +219,7 @@
             this.label1.Font = new System.Drawing.Font("Old English Text MT", 27.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(226, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(761, 111);
+            this.label1.Size = new System.Drawing.Size(758, 111);
             this.label1.TabIndex = 11;
             this.label1.Text = "Character Creation";
             // 
@@ -414,7 +414,7 @@
             this.label11.Font = new System.Drawing.Font("Old English Text MT", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(623, 400);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(259, 168);
+            this.label11.Size = new System.Drawing.Size(259, 214);
             this.label11.TabIndex = 29;
             this.label11.Text = "* Each number may only be inserted into one field. ";
             // 
@@ -468,7 +468,7 @@
             this.Controls.Add(this.characterNameTextBox);
             this.Name = "CreateCharacter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreateCharacter";
+            this.Text = "Create Your Character";
             this.Load += new System.EventHandler(this.CreateCharacter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
