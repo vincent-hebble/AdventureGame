@@ -14,6 +14,8 @@ namespace AdventureGame
 {
     public partial class CreateAccount : Form
     {
+        DatabaseCalls data = new DatabaseCalls();
+
         public CreateAccount()
         {
             InitializeComponent();
@@ -25,25 +27,11 @@ namespace AdventureGame
             {
                 if (password1TextBox.Text == password2TextBox.Text)
                 {
-                    AdventureDatabaseEntities dbcontext = new AdventureDatabaseEntities();
-
-                    var checkQuery = from check in dbcontext.userTables
-                                     where check.username == usernameTextBox.Text
-                                     select check;
-
-                    if (!checkQuery.Any())
+                    if (data.accountCheck(usernameTextBox.Text))
                     {
-                        userTable data = new userTable
-                        {
-                            password = password1TextBox.Text,
-                            username = usernameTextBox.Text
-                        };
-
                         try
                         {
-                            dbcontext.userTables.Add(data);
-                            dbcontext.SaveChanges();
-                            dbcontext.Dispose();
+                            data.createUser(usernameTextBox.Text, password1TextBox.Text);
                             MessageBox.Show("Congratulations!!!", "Account Creation Succesful", MessageBoxButtons.OK);
                             this.Close();
                         }

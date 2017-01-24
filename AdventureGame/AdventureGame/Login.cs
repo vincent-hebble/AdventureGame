@@ -14,62 +14,20 @@ namespace AdventureGame
 {
     public partial class Login : Form
     {
+        DatabaseCalls data = new DatabaseCalls();
 
         public Login()
         {
             InitializeComponent();
         }
 
-        private void getUser(string userName, string userPassword)
-        {
-           AdventureDatabaseEntities dbcontext = new AdventureDatabaseEntities();
-
-            var idQuery = (from user in dbcontext.userTables
-                             where user.username == userName &&
-                                   user.password == userPassword
-                             select user).SingleOrDefault();
-
-            var objectQuery = (from obj in dbcontext.idTables
-                               where obj.objectID == "userID"
-                               select obj).SingleOrDefault();
-
-            objectQuery.ID = idQuery.ID;
-
-            dbcontext.SaveChanges();
-
-            dbcontext.Dispose();
-        }
-
-        private bool isUserValid(string userName, string userPassword)
-        {
-              AdventureDatabaseEntities dbcontext = new AdventureDatabaseEntities();
-
-               var loginQuery = from valid in dbcontext.userTables
-                                 where valid.username == userName &&
-                                       valid.password == userPassword
-                                 select valid;
-
-            if (loginQuery.Any())
-            {
-                dbcontext.Dispose();
-                getUser(userName, userPassword);
-                return true;
-
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (isUserValid(userNameTextBox.Text, passwordTextBox.Text))
+            if (data.isUserValid(userNameTextBox.Text, passwordTextBox.Text))
             {
-                Adventure game = new Adventure();
-                game.Show();
-                game.FormClosed += new FormClosedEventHandler(game_FormClosed);
+                Menu menu = new Menu();
+                menu.Show();
+                menu.FormClosed += new FormClosedEventHandler(menu_FormClosed);
                 this.Hide();
 
                 userNameTextBox.Text = "";
@@ -97,7 +55,7 @@ namespace AdventureGame
             this.Hide();
         }
 
-        void game_FormClosed(object sender, FormClosedEventArgs e)
+        void menu_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
         }

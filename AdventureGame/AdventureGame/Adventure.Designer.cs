@@ -317,9 +317,9 @@
             // 
             this.inventoryGroupBox.Controls.Add(this.inventoryTextBox);
             this.inventoryGroupBox.ForeColor = System.Drawing.SystemColors.Control;
-            this.inventoryGroupBox.Location = new System.Drawing.Point(19, 29);
+            this.inventoryGroupBox.Location = new System.Drawing.Point(19, 3);
             this.inventoryGroupBox.Name = "inventoryGroupBox";
-            this.inventoryGroupBox.Size = new System.Drawing.Size(516, 770);
+            this.inventoryGroupBox.Size = new System.Drawing.Size(516, 796);
             this.inventoryGroupBox.TabIndex = 0;
             this.inventoryGroupBox.TabStop = false;
             this.inventoryGroupBox.Text = "Inventory";
@@ -330,10 +330,10 @@
             this.inventoryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inventoryTextBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.inventoryTextBox.ForeColor = System.Drawing.SystemColors.Control;
-            this.inventoryTextBox.Location = new System.Drawing.Point(16, 54);
+            this.inventoryTextBox.Location = new System.Drawing.Point(16, 48);
             this.inventoryTextBox.Name = "inventoryTextBox";
             this.inventoryTextBox.ReadOnly = true;
-            this.inventoryTextBox.Size = new System.Drawing.Size(477, 690);
+            this.inventoryTextBox.Size = new System.Drawing.Size(477, 696);
             this.inventoryTextBox.TabIndex = 1;
             this.inventoryTextBox.Text = "";
             // 
@@ -768,12 +768,13 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(76, 45);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // returnToLoginToolStripMenuItem
             // 
             this.returnToLoginToolStripMenuItem.Name = "returnToLoginToolStripMenuItem";
-            this.returnToLoginToolStripMenuItem.Size = new System.Drawing.Size(338, 46);
-            this.returnToLoginToolStripMenuItem.Text = "Return to Login";
+            this.returnToLoginToolStripMenuItem.Size = new System.Drawing.Size(341, 46);
+            this.returnToLoginToolStripMenuItem.Text = "Return to Menu";
             this.returnToLoginToolStripMenuItem.Click += new System.EventHandler(this.returnToLoginToolStripMenuItem_Click);
             // 
             // exitGameToolStripMenuItem
