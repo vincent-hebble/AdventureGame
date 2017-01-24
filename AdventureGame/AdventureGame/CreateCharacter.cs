@@ -115,12 +115,12 @@ namespace AdventureGame
 
         private void raceInfoButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("");
+            MessageBox.Show("", "Race Info", MessageBoxButtons.OK);
         }
 
         private void classInfoButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("");
+            MessageBox.Show("", "Class Info", MessageBoxButtons.OK);
         }
 
         private void CreateCharacter_Load(object sender, EventArgs e)
