@@ -93,6 +93,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.processButton = new System.Windows.Forms.Button();
             this.topLeftPanel.SuspendLayout();
             this.equipmentGroupBox.SuspendLayout();
             this.bottomLeftPanel.SuspendLayout();
@@ -474,12 +475,12 @@
             this.inputTextBox.Name = "inputTextBox";
             this.inputTextBox.Size = new System.Drawing.Size(1351, 38);
             this.inputTextBox.TabIndex = 0;
-            this.inputTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.inputTextBox_KeyUp);
             // 
             // commandPanel
             // 
             this.commandPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.commandPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.commandPanel.Controls.Add(this.processButton);
             this.commandPanel.Controls.Add(this.previousLabel);
             this.commandPanel.Controls.Add(this.commandTextBox);
             this.commandPanel.Location = new System.Drawing.Point(12, 747);
@@ -768,7 +769,6 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(76, 45);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // returnToLoginToolStripMenuItem
             // 
@@ -780,9 +780,19 @@
             // exitGameToolStripMenuItem
             // 
             this.exitGameToolStripMenuItem.Name = "exitGameToolStripMenuItem";
-            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(338, 46);
+            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(341, 46);
             this.exitGameToolStripMenuItem.Text = "Exit Game";
             this.exitGameToolStripMenuItem.Click += new System.EventHandler(this.exitGameToolStripMenuItem_Click);
+            // 
+            // processButton
+            // 
+            this.processButton.Location = new System.Drawing.Point(1334, 300);
+            this.processButton.Name = "processButton";
+            this.processButton.Size = new System.Drawing.Size(0, 0);
+            this.processButton.TabIndex = 2;
+            this.processButton.Text = "button1";
+            this.processButton.UseVisualStyleBackColor = true;
+            this.processButton.Click += new System.EventHandler(this.processButton_Click);
             // 
             // Adventure
             // 
@@ -894,6 +904,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnToLoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitGameToolStripMenuItem;
+        private System.Windows.Forms.Button processButton;
     }
 }
 

@@ -19,9 +19,10 @@ namespace AdventureGame
         public Login()
         {
             InitializeComponent();
+            this.AcceptButton = loginButton;
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void login()
         {
             if (data.isUserValid(userNameTextBox.Text, passwordTextBox.Text))
             {
@@ -35,11 +36,16 @@ namespace AdventureGame
             }
             else
             {
-                MessageBox.Show("Incorrect User Name or Password","Login Unsuccessful",MessageBoxButtons.OK);
+                MessageBox.Show("Incorrect User Name or Password", "Login Unsuccessful", MessageBoxButtons.OK);
 
                 userNameTextBox.Text = "";
                 passwordTextBox.Text = "";
             }
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            login();
         }
 
         private void exitButton_Click(object sender, EventArgs e)

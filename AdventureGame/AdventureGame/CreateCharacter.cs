@@ -115,12 +115,12 @@ namespace AdventureGame
 
         private void raceInfoButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("");
+            MessageBox.Show("", "Race Info", MessageBoxButtons.OK);
         }
 
         private void classInfoButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("");
+            MessageBox.Show("", "Class Info", MessageBoxButtons.OK);
         }
 
         private void CreateCharacter_Load(object sender, EventArgs e)
@@ -165,6 +165,7 @@ namespace AdventureGame
         private void resetButton_Click(object sender, EventArgs e)
         {
             reset();
+
         }
 
         //Strength = 0, Constitution = 1, Dexterity = 2, 
@@ -278,10 +279,10 @@ namespace AdventureGame
                     {
                         classStatModifier[i] = 0;
                     }
-
-                    refreshStatBonus();
                 }
             }
+
+            refreshStatBonus();
         }
     }
 }

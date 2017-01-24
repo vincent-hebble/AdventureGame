@@ -17,16 +17,27 @@ namespace AdventureGame
         string characterName = "", characterClass = "", characterRace = "";
         int strength = 0, constitution = 0, dexterity = 0, charisma = 0, wisdom = 0, intelligence = 0;
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         int hp = 0, mana = 0, stamina = 0, level = 0, experience = 0;
+
+        private void processButton_Click(object sender, EventArgs e)
+        {
+            processData();
+        }
 
         public Adventure()
         {
             InitializeComponent();
+
+            this.AcceptButton = processButton;
+        }
+
+        private void processData()
+        {
+            string Input = inputTextBox.Text;
+            inputTextBox.Text = "";
+            commandTextBox.Text += (Input + '\n');
+            commandTextBox.SelectionStart = commandTextBox.Text.Length;
+            commandTextBox.ScrollToCaret();
         }
 
         private void updateHUD()
@@ -48,18 +59,6 @@ namespace AdventureGame
 
             this.Show();
             inputTextBox.Focus();
-        }
-
-        private void inputTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string Input = inputTextBox.Text;
-                inputTextBox.Text = "";
-                commandTextBox.Text += (Input + '\n');
-                commandTextBox.SelectionStart = commandTextBox.Text.Length;
-                commandTextBox.ScrollToCaret();
-            }
         }
 
         private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
