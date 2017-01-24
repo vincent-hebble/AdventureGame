@@ -227,7 +227,7 @@ namespace AdventureGame
             level = characterQuery.Level;
             experience = characterQuery.Experience;
             strength = characterQuery.Strength;
-            constitution = characterQuery.Strength;
+            constitution = characterQuery.Constitution;
             dexterity = characterQuery.Dexterity;
             charisma = characterQuery.Charisma;
             wisdom = characterQuery.Wisdom;
