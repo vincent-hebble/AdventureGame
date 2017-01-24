@@ -160,6 +160,11 @@ namespace AdventureGame
                 dexterity += 2;
                 maxStamina += 25;
             }
+            else if (characterClass == "Cleric")
+            {
+                wisdom += 2;
+                maxMana += 25;
+            }
 
             maxHP += 8 * constitution;
             maxMana += 8 * wisdom;

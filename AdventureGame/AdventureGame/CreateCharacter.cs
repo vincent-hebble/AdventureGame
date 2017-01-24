@@ -16,7 +16,7 @@ namespace AdventureGame
 
         int[] raceStatModifier = new int[6];
         int[] classStatModifier = new int[6];
-        
+
 
         private int[] standardArray = new int[6];
 
@@ -38,7 +38,7 @@ namespace AdventureGame
             {
                 if (raceStatModifier[i] + classStatModifier[i] > 0)
                 {
-                    switch(i)
+                    switch (i)
                     {
                         case 0: strengthLabel.Visible = true; break;
                         case 1: constitutionLabel.Visible = true; break;
@@ -89,9 +89,9 @@ namespace AdventureGame
             standardArray[4] = Convert.ToInt32(wisdomComboBox.Text);
             standardArray[5] = Convert.ToInt32(intelligenceComboBox.Text);
 
-            for(int i = 0; i < 6; ++i)
+            for (int i = 0; i < 6; ++i)
             {
-                switch(standardArray[i])
+                switch (standardArray[i])
                 {
                     case 16: test[0]++; break;
                     case 14: test[1]++; break;
@@ -102,9 +102,9 @@ namespace AdventureGame
                 }
             }
 
-            for(int i = 0; i <6; ++i)
+            for (int i = 0; i < 6; ++i)
             {
-                if(test[i] != 1)
+                if (test[i] != 1)
                 {
                     isStandardArray = false;
                 }
@@ -132,19 +132,20 @@ namespace AdventureGame
         {
             if (characterNameTextBox.Text != "")
             {
-                if(isStandardArray())
+                if (isStandardArray())
                 {
                     string name = characterNameTextBox.Text;
                     string race = raceComboBox.Text;
                     string characterClass = classComboBox.Text;
 
-                    try {
+                    try
+                    {
                         data.createCharacter(name, race, characterClass, standardArray[0], standardArray[1], standardArray[2],
                             standardArray[3], standardArray[4], standardArray[5]);
 
                         this.Close();
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Something happened!!! oops!\n\n" + ex.Message + "",
                             "Character creation unsuccessful", MessageBoxButtons.OK);
@@ -164,6 +165,7 @@ namespace AdventureGame
         private void resetButton_Click(object sender, EventArgs e)
         {
             reset();
+
         }
 
         //Strength = 0, Constitution = 1, Dexterity = 2, 
@@ -173,11 +175,11 @@ namespace AdventureGame
         {
             string selection = raceComboBox.Text;
 
-            if(selection == "Human")
+            if (selection == "Human")
             {
-                for(int i = 0; i < 6; ++i)
+                for (int i = 0; i < 6; ++i)
                 {
-                    if(i == 3)
+                    if (i == 3)
                     {
                         raceStatModifier[i] = 2;
                     }
@@ -256,6 +258,20 @@ namespace AdventureGame
                 for (int i = 0; i < 6; ++i)
                 {
                     if (i == 2)
+                    {
+                        classStatModifier[i] = 2;
+                    }
+                    else
+                    {
+                        classStatModifier[i] = 0;
+                    }
+                }
+            }
+            else if (selection == "Cleric")
+            {
+                for (int i = 0; i < 6; ++i)
+                {
+                    if (i == 4)
                     {
                         classStatModifier[i] = 2;
                     }
