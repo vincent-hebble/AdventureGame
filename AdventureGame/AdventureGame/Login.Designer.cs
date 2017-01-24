@@ -43,10 +43,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Parchment", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Old English Text MT", 20.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(30, 355);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 85);
+            this.label1.Size = new System.Drawing.Size(369, 81);
             this.label1.TabIndex = 0;
             this.label1.Text = "User Name";
             // 
@@ -54,10 +54,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Parchment", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 490);
+            this.label2.Font = new System.Drawing.Font("Old English Text MT", 20.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(30, 491);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(222, 85);
+            this.label2.Size = new System.Drawing.Size(315, 81);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
@@ -65,16 +65,16 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Parchment", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(287, 31);
+            this.label3.Font = new System.Drawing.Font("Old English Text MT", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(176, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(473, 255);
+            this.label3.Size = new System.Drawing.Size(714, 286);
             this.label3.TabIndex = 2;
             this.label3.Text = "Login";
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(330, 521);
+            this.passwordTextBox.Location = new System.Drawing.Point(453, 515);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(411, 38);
@@ -82,7 +82,7 @@
             // 
             // userNameTextBox
             // 
-            this.userNameTextBox.Location = new System.Drawing.Point(330, 386);
+            this.userNameTextBox.Location = new System.Drawing.Point(453, 381);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(411, 38);
             this.userNameTextBox.TabIndex = 1;
@@ -90,10 +90,12 @@
             // loginButton
             // 
             this.loginButton.BackColor = System.Drawing.Color.Transparent;
-            this.loginButton.Font = new System.Drawing.Font("Parchment", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(345, 601);
+            this.loginButton.BackgroundImage = global::AdventureGame.Properties.Resources.button;
+            this.loginButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.loginButton.Font = new System.Drawing.Font("Old English Text MT", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButton.Location = new System.Drawing.Point(251, 656);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(151, 84);
+            this.loginButton.Size = new System.Drawing.Size(260, 84);
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
@@ -102,10 +104,12 @@
             // exitButton
             // 
             this.exitButton.BackColor = System.Drawing.Color.Transparent;
-            this.exitButton.Font = new System.Drawing.Font("Parchment", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(535, 601);
+            this.exitButton.BackgroundImage = global::AdventureGame.Properties.Resources.button;
+            this.exitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.exitButton.Font = new System.Drawing.Font("Old English Text MT", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Location = new System.Drawing.Point(531, 656);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(151, 84);
+            this.exitButton.Size = new System.Drawing.Size(260, 84);
             this.exitButton.TabIndex = 4;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = false;
@@ -117,7 +121,7 @@
             this.accountLabel.AutoSize = true;
             this.accountLabel.BackColor = System.Drawing.Color.Transparent;
             this.accountLabel.Font = new System.Drawing.Font("Old English Text MT", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accountLabel.Location = new System.Drawing.Point(391, 729);
+            this.accountLabel.Location = new System.Drawing.Point(412, 810);
             this.accountLabel.Name = "accountLabel";
             this.accountLabel.Size = new System.Drawing.Size(224, 33);
             this.accountLabel.TabIndex = 5;
@@ -129,7 +133,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(983, 840);
+            this.label4.Location = new System.Drawing.Point(1004, 840);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 32);
             this.label4.TabIndex = 8;

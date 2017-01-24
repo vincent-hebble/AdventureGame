@@ -25,3 +25,5 @@ C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\bin\D
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.Adventure.resources
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\bin\Debug\AdventureDatabase.mdf
 C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\bin\Debug\AdventureDatabase_log.ldf
+C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.Menu.resources
+C:\Users\hbobi\OneDrive\Pictures\AdventureGame\AdventureGame\AdventureGame\obj\Debug\AdventureGame.CreateCharacter.resources

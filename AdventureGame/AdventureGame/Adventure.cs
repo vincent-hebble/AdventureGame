@@ -12,28 +12,42 @@ namespace AdventureGame
 {
     public partial class Adventure : Form
     {
+        DatabaseCalls data = new DatabaseCalls();
+
+        string characterName = "", characterClass = "", characterRace = "";
+        int strength = 0, constitution = 0, dexterity = 0, charisma = 0, wisdom = 0, intelligence = 0;
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        int hp = 0, mana = 0, stamina = 0, level = 0, experience = 0;
+
         public Adventure()
         {
             InitializeComponent();
         }
 
-        private int getUserID()
+        private void updateHUD()
         {
-            AdventureDatabaseEntities dbcontext = new AdventureDatabaseEntities();
-            var idQuery = (from id in dbcontext.idTables
-                                where id.objectID == "userID"
-                                select id.ID).Single();
-
-            return idQuery.Value;
+            nameText.Text = characterName; classText.Text = characterClass; raceText.Text = characterRace;
+            levelText.Text = level.ToString(); experienceText.Text = experience.ToString(); strengthText.Text = strength.ToString();
+            constitutionText.Text = constitution.ToString(); dexterityText.Text = dexterity.ToString();
+            charismaText.Text = charisma.ToString(); wisdomText.Text = wisdom.ToString(); intelligenceText.Text = intelligence.ToString();
+            hpText.Text = hp.ToString(); manaText.Text = mana.ToString(); staminaText.Text = stamina.ToString();
         }
 
         private void AdventureGame_Load(object sender, EventArgs e)
         {
-            int ID = getUserID();
+            data.getCharacter(ref characterName, ref characterClass, ref characterRace, ref level, ref experience,
+                              ref strength, ref constitution, ref dexterity, ref charisma, ref wisdom, ref intelligence,
+                              ref hp, ref mana, ref stamina);
+
+            updateHUD();
 
             this.Show();
             inputTextBox.Focus();
-            levelText.Text = ID.ToString();
         }
 
         private void inputTextBox_KeyUp(object sender, KeyEventArgs e)
@@ -42,8 +56,9 @@ namespace AdventureGame
             {
                 string Input = inputTextBox.Text;
                 inputTextBox.Text = "";
-                nameText.Text = Input;
                 commandTextBox.Text += (Input + '\n');
+                commandTextBox.SelectionStart = commandTextBox.Text.Length;
+                commandTextBox.ScrollToCaret();
             }
         }
 
