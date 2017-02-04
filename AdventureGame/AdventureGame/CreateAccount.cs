@@ -72,5 +72,15 @@ namespace AdventureGame
             password1TextBox.Text = "";
             password2TextBox.Text = "";
         }
+
+        private void returnToLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
