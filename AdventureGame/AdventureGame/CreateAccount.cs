@@ -19,6 +19,7 @@ namespace AdventureGame
         public CreateAccount()
         {
             InitializeComponent();
+            this.AcceptButton = createButton;
         }
 
         private void createButton_Click(object sender, EventArgs e)

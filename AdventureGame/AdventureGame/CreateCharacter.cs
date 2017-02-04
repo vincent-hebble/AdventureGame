@@ -23,6 +23,7 @@ namespace AdventureGame
         public CreateCharacter()
         {
             InitializeComponent();
+            this.AcceptButton = createButton;
         }
 
         private void refreshStatBonus()
