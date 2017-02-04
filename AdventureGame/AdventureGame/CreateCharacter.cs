@@ -63,31 +63,10 @@ namespace AdventureGame
             }
         }
 
-        private void reset()
-        {
-            characterNameTextBox.Text = "";
-            raceComboBox.Text = "Human";
-            classComboBox.Text = "Warrior";
-            strengthComboBox.Text = "16";
-            constitutionComboBox.Text = "14";
-            dexterityComboBox.Text = "13";
-            charismaComboBox.Text = "12";
-            wisdomComboBox.Text = "11";
-            intelligenceComboBox.Text = "10";
-        }
-
         private bool isStandardArray()
         {
             int[] test = { 0, 0, 0, 0, 0, 0 };
-
-            bool isStandardArray = true;
-
-            standardArray[0] = Convert.ToInt32(strengthComboBox.Text);
-            standardArray[1] = Convert.ToInt32(constitutionComboBox.Text);
-            standardArray[2] = Convert.ToInt32(dexterityComboBox.Text);
-            standardArray[3] = Convert.ToInt32(charismaComboBox.Text);
-            standardArray[4] = Convert.ToInt32(wisdomComboBox.Text);
-            standardArray[5] = Convert.ToInt32(intelligenceComboBox.Text);
+            bool trueFalse = true;
 
             for (int i = 0; i < 6; ++i)
             {
@@ -102,15 +81,89 @@ namespace AdventureGame
                 }
             }
 
-            for (int i = 0; i < 6; ++i)
+            for (int j = 0; j < 6; j++)
             {
-                if (test[i] != 1)
-                {
-                    isStandardArray = false;
-                }
+                if (test[j] > 1)
+                    trueFalse = false;
             }
 
-            return isStandardArray;
+            return trueFalse;
+        }
+
+        private void makeStandardArray(int changedStat)
+        {
+            int needToChange = 0, missingNumber = 0;
+            int[] test = { 0, 0, 0, 0, 0, 0 };
+
+            if (!isStandardArray())
+            {
+                for (int i = 0; i < 6; ++i)
+                {
+                    if (standardArray[changedStat] == standardArray[i])
+                    {
+                        if (i != changedStat)
+                        {
+                            needToChange = i;
+                        }
+                    }
+
+                    switch (standardArray[i])
+                    {
+                        case 16: test[0] += 1; break;
+                        case 14: test[1] += 1; break;
+                        case 13: test[2] += 1; break;
+                        case 12: test[3] += 1; break;
+                        case 11: test[4] += 1; break;
+                        case 10: test[5] += 1; break;
+                    }
+                }
+
+                for (int i = 0; i < 6; ++i)
+                {
+                    if (test[i] == 0)
+                    {
+                        switch (i)
+                        {
+                            case 0: missingNumber = 16; break;
+                            case 1: missingNumber = 14; break;
+                            case 2: missingNumber = 13; break;
+                            case 3: missingNumber = 12; break;
+                            case 4: missingNumber = 11; break;
+                            case 5: missingNumber = 10; break;
+                        }
+                    }
+                }
+
+                switch (needToChange)
+                {
+                    case 0: strengthComboBox.Text = missingNumber.ToString(); break;
+                    case 1: constitutionComboBox.Text = missingNumber.ToString(); break;
+                    case 2: dexterityComboBox.Text = missingNumber.ToString(); break;
+                    case 3: charismaComboBox.Text = missingNumber.ToString(); break;
+                    case 4: wisdomComboBox.Text = missingNumber.ToString(); break;
+                    case 5: intelligenceComboBox.Text = missingNumber.ToString(); break;
+                }
+            }
+        }
+
+        private void reset()
+        {
+            characterNameTextBox.Text = "";
+            raceComboBox.Text = "Human";
+            classComboBox.Text = "Warrior";
+            strengthComboBox.Text = "16";
+            constitutionComboBox.Text = "14";
+            dexterityComboBox.Text = "13";
+            charismaComboBox.Text = "12";
+            wisdomComboBox.Text = "11";
+            intelligenceComboBox.Text = "10";
+
+            standardArray[0] = Convert.ToInt32(strengthComboBox.Text);
+            standardArray[1] = Convert.ToInt32(constitutionComboBox.Text);
+            standardArray[2] = Convert.ToInt32(dexterityComboBox.Text);
+            standardArray[3] = Convert.ToInt32(charismaComboBox.Text);
+            standardArray[4] = Convert.ToInt32(wisdomComboBox.Text);
+            standardArray[5] = Convert.ToInt32(intelligenceComboBox.Text);
         }
 
         private void raceInfoButton_Click(object sender, EventArgs e)
@@ -132,28 +185,21 @@ namespace AdventureGame
         {
             if (characterNameTextBox.Text != "")
             {
-                if (isStandardArray())
+                string name = characterNameTextBox.Text;
+                string race = raceComboBox.Text;
+                string characterClass = classComboBox.Text;
+
+                try
                 {
-                    string name = characterNameTextBox.Text;
-                    string race = raceComboBox.Text;
-                    string characterClass = classComboBox.Text;
+                    data.createCharacter(name, race, characterClass, standardArray[0], standardArray[1], standardArray[2],
+                        standardArray[3], standardArray[4], standardArray[5]);
 
-                    try
-                    {
-                        data.createCharacter(name, race, characterClass, standardArray[0], standardArray[1], standardArray[2],
-                            standardArray[3], standardArray[4], standardArray[5]);
-
-                        this.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Something happened!!! oops!\n\n" + ex.Message + "",
-                            "Character creation unsuccessful", MessageBoxButtons.OK);
-                    }
+                    this.Close();
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("The stat values are not entered correctly make sure there is a unique value in each fied and resubmit", "Stats entered incorrectly!", MessageBoxButtons.OK);
+                    MessageBox.Show("Something happened!!! oops!\n\n" + ex.Message + "",
+                        "Character creation unsuccessful", MessageBoxButtons.OK);
                 }
             }
             else
@@ -283,6 +329,52 @@ namespace AdventureGame
             }
 
             refreshStatBonus();
+        }
+
+        private void strengthComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            standardArray[0] = Convert.ToInt32(strengthComboBox.Text);
+            makeStandardArray(0);
+        }
+
+        private void constitutionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            standardArray[1] = Convert.ToInt32(constitutionComboBox.Text);
+            makeStandardArray(1);
+        }
+
+        private void dexterityComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            standardArray[2] = Convert.ToInt32(dexterityComboBox.Text);
+            makeStandardArray(2);
+        }
+
+        private void charismaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            standardArray[3] = Convert.ToInt32(charismaComboBox.Text);
+            makeStandardArray(3);
+        }
+
+        private void wisdomComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            standardArray[4] = Convert.ToInt32(wisdomComboBox.Text);
+            makeStandardArray(4);
+        }
+
+        private void intelligenceComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            standardArray[5] = Convert.ToInt32(intelligenceComboBox.Text);
+            makeStandardArray(5);
+        }
+
+        private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void returnToMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
